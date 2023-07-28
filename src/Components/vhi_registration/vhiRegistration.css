@@ -108,6 +108,29 @@
     color: #3f3d56a6;
 }
 
+
+
+.traced-upload-box {
+    position: relative;
+}
+
+.traced-upload-box input {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.traced-upload-box .uploadIcon {
+    position: relative;
+    cursor: pointer;
+    color: rgb(3, 184, 3);
+    font-size: 55px !important;
+    z-index: 1;
+}
+
 /* ================botton=================== */
 
 .vhi_button_container {
