@@ -1,0 +1,53 @@
+.leftloginContainer {
+    flex: 0.5;
+    /* background-color: aqua; */
+}
+
+.left-login-topitems {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12%;
+    /* background-color: blueviolet; */
+}
+
+.left-login-topitems h1 {
+    margin-top: 3%;
+    line-height: 30px;
+    color: #3F3D56;
+    font-size: 30px;
+}
+
+
+.leftlogin-imgitems {
+    /* background-color: brown; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    margin-right: 8%;
+
+
+}
+
+.left-login-topitems img {
+    margin-top: 1%;
+    margin-left: 6%;
+}
+
+.left-login-topitems h1 {
+    text-align: center;
+}
+
+/* .leftlogin-imgitems {
+    width: 30%;
+
+} */
+
+.left-login-topitems img {
+    width: 80px;
+    height: 80px;
+
+}

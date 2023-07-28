@@ -1,0 +1,102 @@
+.homeNavComponent_Container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 12vh;
+
+}
+
+.navLogo {
+    margin-left: 60px;
+}
+
+.navLogo img {
+    width: 185px;
+    height: 85px;
+}
+
+
+
+.nav-middle-links {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-middle-links a.active {
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(11, 201, 11);
+}
+
+.navButtons {
+    display: flex;
+    justify-content: center;
+    margin-right: 5%;
+}
+
+.loginlink {
+    margin-right: 2%;
+}
+
+.navButtons .navlogin {
+    height: 30px;
+    width: 65px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 8px;
+    background-color: white;
+    border: 2px solid rgb(8, 193, 8);
+    color: rgb(8, 193, 8);
+
+    cursor: pointer;
+    outline: none;
+}
+
+.navButtons .navregister {
+    height: 30px;
+    font-size: 11px;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 8px;
+    background-color: white;
+    border: 2px solid rgb(8, 193, 8);
+    color: rgb(8, 193, 8);
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+
+
+}
+
+
+
+.navButtons .navlogin:hover {
+    background-color: rgb(8, 193, 8);
+    color: white;
+    border: none;
+    outline: none;
+
+}
+
+.navButtons .navregister:hover {
+    background-color: rgb(8, 193, 8);
+    color: white;
+    border: none;
+    outline: none;
+
+}
+
+
+.nav-middle-links a {
+    text-decoration: none;
+    color: #4E4C4C;
+    font-weight: 500;
+
+}
+
+.nav-middle-links a:hover {
+    color: rgb(3, 184, 3) !important;
+
+
+}

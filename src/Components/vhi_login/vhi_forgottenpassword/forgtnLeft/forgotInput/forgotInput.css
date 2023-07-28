@@ -1,0 +1,54 @@
+.fogotInputContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+
+}
+
+.fogotInputContainer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.fogotInputContainer input {
+    width: 65%;
+    height: 7vh;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+    outline: none;
+    border: 2px solid rgb(5, 200, 5);
+}
+
+.fogotInputContainer button {
+    width: 65%;
+    height: 7vh;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    z-index: 11;
+    background-color: rgb(17, 222, 17);
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-top: 2%;
+    cursor: pointer;
+
+
+}
+
+.fogotInputContainer button:hover {
+    background-color: rgb(17, 179, 17);
+}
+
+.fogotInputContainer a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    color: black;
+    padding-top: 2%;
+
+}

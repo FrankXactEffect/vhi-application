@@ -1,0 +1,46 @@
+.input__over_all__container {
+    /* background-color: lightblue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    height: 100px;
+
+}
+
+
+#level-one {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 2%;
+}
+
+
+
+.level-one {
+    width: 25%;
+    height: 80px;
+    /* background-color: cadetblue; */
+
+}
+
+.level-one label {
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #4E4C4C;
+}
+
+.level-one input {
+    width: 85%;
+    height: 45px;
+    border-radius: 25px;
+    padding-left: 15px;
+    font-size: 18px;
+    padding-right: 15px;
+    box-shadow: 0px 1px 4px 1px rgb(110, 110, 110);
+    border: none;
+    outline: none;
+    z-index: 11;
+
+}

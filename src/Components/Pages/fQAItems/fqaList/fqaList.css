@@ -1,0 +1,47 @@
+.faqList_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.left {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4rem;
+    width: 40rem;
+}
+
+.details {
+    margin-left: -1rem;
+}
+
+.Date_time {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.car {
+    display: flex;
+    margin-top: 2rem;
+}
+
+.file {
+    display: flex;
+    margin-top: 2rem;
+}
+
+.flex {
+    margin-left: 0.5rem;
+}
+
+.right {
+    margin-right: 5%;
+}
+
+.right img {
+
+
+    width: 500px;
+    height: 350px;
+
+}

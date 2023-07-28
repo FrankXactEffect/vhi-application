@@ -1,0 +1,151 @@
+.loginInputContainer {
+    margin-top: 3%;
+}
+
+.first-row-item {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.second-row-item {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 3%;
+}
+
+.first-row-item input {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    border-radius: 25px;
+    padding-left: 15px;
+    font-size: 18px;
+    padding-right: 15px;
+    box-shadow: 0px 1px 2px 1px rgb(177, 177, 177);
+    border: none;
+    outline: none;
+    z-index: 11;
+
+}
+
+.first-row-item input:hover {
+    box-shadow: 0px 2px 4px 0px rgb(64, 199, 64);
+}
+
+#level-one {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-left: 2%;
+}
+
+
+
+
+
+.second-row-item input {
+    width: 100%;
+    height: 40px;
+    border-radius: 25px;
+    padding-left: 15px;
+    font-size: 18px;
+    padding-right: 15px;
+    box-shadow: 0px 1px 2px 1px rgb(177, 177, 177);
+    border: none;
+    outline: none;
+    z-index: 11;
+}
+
+.second-row-item input:hover {
+    box-shadow: 0px 2px 4px 0px rgb(64, 199, 64);
+}
+
+.name-field label {
+    padding-left: 5%;
+    padding-bottom: 4%;
+}
+
+.email-field label {
+    padding-left: 5%;
+    padding-bottom: 4%;
+}
+
+.password-field label {
+    padding-left: 5%;
+    padding-bottom: 4%;
+}
+
+.confirm-password-field label {
+    padding-left: 5%;
+    padding-bottom: 4%;
+}
+
+
+.inputButtonContainer {
+    margin-top: 6%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%;
+
+
+}
+
+.inputButtonContainer button {
+    color: white;
+    width: 50%;
+    height: 55px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: rgb(3, 184, 3);
+    z-index: 11;
+    border: none;
+    outline: none;
+    box-shadow: 0px 1px 4px 1px rgb(97, 97, 97);
+
+}
+
+.inputButtonContainer button:hover {
+    background-color: rgb(10, 167, 10);
+}
+
+.optional-link {
+    text-align: center;
+    padding-top: 1%;
+
+}
+
+.optional-link a {
+    text-decoration: none;
+    padding-left: 1%;
+    color: rgb(7, 211, 7);
+}
+
+/* second row input and icon styling */
+
+
+.second-row-input-div {
+
+    position: relative;
+}
+
+.second-row-input-div span {
+    position: absolute;
+    right: 1rem;
+    bottom: 5px;
+    cursor: pointer;
+}
+
+.visibleIcon {
+    color: rgb(7, 211, 7);
+    font-size: 22px !important;
+}
+
+.visibleOffIcon {
+    color: silver;
+    font-size: 22px !important;
+}

@@ -1,0 +1,21 @@
+.homeTextContainer {
+    display: grid;
+    place-items: center;
+
+
+}
+
+.homeTextContainer h1 {
+    text-align: center;
+    color: #3F3D56;
+    font-size: 50px;
+    line-height: 55px;
+}
+
+.homeTextContainer p {
+    font-size: 18px;
+    line-height: 30px;
+    color: #5b596b;
+    font-weight: 600;
+
+}

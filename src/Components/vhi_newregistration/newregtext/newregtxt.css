@@ -1,0 +1,18 @@
+.newregtxt {
+    margin-top: 2%;
+    display: grid;
+    place-items: center;
+}
+
+.newregtxt h1 {
+    color: #3F3D56;
+    font-size: 50px;
+
+}
+
+.newregtxt p {
+    font-size: 25px;
+    padding-top: 0.5%;
+    color: #5b596b;
+    font-weight: 600;
+}

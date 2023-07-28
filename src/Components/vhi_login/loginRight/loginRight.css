@@ -1,0 +1,40 @@
+.loginRightContainer {
+    flex: 0.5;
+    /* background-color: aqua; */
+    height: 100vh;
+    box-shadow: 0px 0px 8px 4px rgb(198, 198, 198);
+}
+
+.navLogo-right-login {
+    margin-left: 60px;
+
+}
+
+.navLogo-right-login img {
+    width: 190px;
+    height: 85px;
+}
+
+
+.createAcccount-right {
+    margin-top: 7%;
+    margin-left: 10%;
+}
+
+.createAcccount-right h1 {
+    font-size: 45px;
+    color: #3F3D56;
+}
+
+.createAcccount-right p {
+    font-size: 18px;
+    color: #3F3D56;
+    font-weight: 500;
+}
+
+.loginRightContainer .side-image-right {
+    width: 500px;
+    height: 400px;
+    margin-left: 10%;
+    margin-top: 1%;
+}

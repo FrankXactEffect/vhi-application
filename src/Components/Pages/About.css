@@ -1,0 +1,22 @@
+.main_page {
+    text-align: center;
+}
+
+.Header {
+    /* font-family: Poppins; */
+    font-size: 4rem;
+    color: #3F3D56;
+}
+
+.text {
+    font-size: 20px;
+    margin-top: 1rem;
+    font-family: calibri;
+    color: #3F3D56;
+}
+
+#image {
+    margin-top: 3rem;
+    width: 450px;
+    height: 300px;
+}

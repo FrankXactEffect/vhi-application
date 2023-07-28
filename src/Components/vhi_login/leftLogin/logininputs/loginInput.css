@@ -1,0 +1,227 @@
+.login-InputContainers {
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    height: 40vh;
+}
+
+.login-InputContainers form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+
+.email-input-container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-top: 2%;
+}
+
+.email-input-container label {
+    padding-left: 15px;
+    padding-bottom: 5px;
+}
+
+.email-input-container input {
+
+    width: 100%;
+    height: 40px;
+    border-radius: 25px;
+    padding-left: 15px;
+    font-size: 18px;
+    padding-right: 15px;
+    box-shadow: 0px 1px 2px 1px rgb(177, 177, 177);
+    border: none;
+    outline: none;
+    z-index: 11;
+
+}
+
+.email-input-container input:hover {
+    box-shadow: 0px 2px 4px 0px rgb(64, 199, 64);
+}
+
+.password-input-container {
+    display: flex;
+    flex-direction: column;
+
+    width: 60%;
+    margin-top: 2%;
+}
+
+.password-input-container label {
+    padding-left: 15px;
+    padding-bottom: 5px;
+}
+
+.input-icon-container {
+    width: 100%;
+
+    height: 7vh;
+    position: relative;
+}
+
+.input-icon-container input {
+    width: 100%;
+    height: 40px;
+    border-radius: 25px;
+    padding-left: 15px;
+    font-size: 18px;
+    padding-right: 15px;
+    box-shadow: 0px 1px 2px 1px rgb(177, 177, 177);
+    border: none;
+    outline: none;
+    z-index: 11;
+}
+
+.input-icon-container input:hover {
+    box-shadow: 0px 2px 4px 0px rgb(64, 199, 64);
+}
+
+.input-icon-container span {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+}
+
+
+.visibleIcon {
+    color: rgb(7, 211, 7);
+    font-size: 22px !important;
+    cursor: pointer;
+}
+
+.visibleOffIcon {
+    color: silver;
+    font-size: 22px !important;
+    cursor: pointer;
+}
+
+.password-input-container a {
+    text-align: right !important;
+    text-decoration: none;
+    color: rgb(7, 211, 7);
+    padding-right: 15px;
+    padding-top: 2px;
+    font-size: 15px;
+}
+
+.password-input-container a:hover {
+    text-decoration: underline;
+
+}
+
+.login-submit-button {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.login-submit-button button {
+    color: white;
+    width: 75%;
+    height: 55px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: rgb(3, 184, 3);
+    z-index: 11;
+    border: none;
+    outline: none;
+    box-shadow: 0px 1px 4px 1px rgb(97, 97, 97);
+    margin-top: 20px;
+}
+
+.login-submit-button button:hover {
+    background-color: rgb(10, 167, 10);
+}
+
+.login-optional-link {
+    text-align: center;
+    padding-top: 2%
+}
+
+.login-optional-link a {
+    text-decoration: none;
+    color: rgb(7, 211, 7);
+    padding-left: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*form {
+    background-color: aqua;
+}
+
+.email-login-field input {
+    position: relative;
+    width: 50%;
+    height: 40px;
+    border-radius: 25px;
+    padding-left: 15px;
+    font-size: 18px;
+    padding-right: 15px;
+    box-shadow: 0px 1px 2px 1px rgb(177, 177, 177);
+    border: none;
+    outline: none;
+    z-index: 11;
+
+}
+
+
+.password-login-field input {
+    width: 100%;
+    height: 40px;
+    border-radius: 25px;
+    padding-left: 15px;
+    font-size: 18px;
+    padding-right: 15px;
+    box-shadow: 0px 1px 2px 1px rgb(177, 177, 177);
+    border: none;
+    outline: none;
+    z-index: 11;
+}
+
+.login-row-input-div {
+    position: relative;
+    background-color: blue;
+    width: 50%;
+
+}
+
+.login-row-input-div span {
+    position: absolute;
+    right: 8px;
+    bottom: 5px;
+    cursor: pointer;
+}
+
+.visibleIcon {
+    color: rgb(7, 211, 7);
+    font-size: 22px !important;
+}
+
+.visibleOffIcon {
+    color: silver;
+    font-size: 22px !important;
+} */

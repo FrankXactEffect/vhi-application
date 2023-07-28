@@ -1,0 +1,28 @@
+.vhi_button_container {
+    margin-top: 6%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%;
+
+
+}
+
+.vhi_button_container button {
+    color: white;
+    width: 30%;
+    height: 55px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: rgb(3, 184, 3);
+    z-index: 11;
+    border: none;
+    outline: none;
+    box-shadow: 0px 1px 4px 1px rgb(97, 97, 97);
+
+}
+
+.vhi_button_container button:hover {
+    background-color: rgb(10, 167, 10);
+}

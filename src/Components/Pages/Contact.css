@@ -1,0 +1,63 @@
+.Full_page {
+    display: flex;
+    margin-left: 4rem;
+
+}
+
+.contact-us-txt {
+    padding-top: 2%;
+    font-size: 4rem;
+    margin-bottom: -1rem;
+    color: #3F3D56;
+}
+
+.text {
+    font-size: 20px;
+    font-family: calibri;
+}
+
+.inputs {
+    margin-top: 1rem;
+}
+
+#box {
+    height: 40px;
+    width: 20rem;
+    border-radius: 10px;
+    border: 1px solid #3F3D56;
+    ;
+}
+
+#box2 {
+    height: 120px;
+    width: 30rem;
+    border-radius: 10px;
+    border: 1px solid #3F3D56;
+    ;
+}
+
+.contact_img {
+    margin-left: 6rem;
+    width: 650px;
+    height: 450px;
+}
+
+.Submit {
+    margin-top: 1rem;
+    width: 400px;
+    height: 70px;
+    border-radius: 20px;
+    border: 2px solid;
+    background: rgba(253, 255, 254, 0);
+    background-color: #00C707;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+
+}
+
+.Submit:hover {
+    background-color: #02a107;
+
+}

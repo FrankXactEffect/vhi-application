@@ -1,0 +1,19 @@
+.faq_text_container {
+    margin-left: 5%;
+    margin-top: 4%;
+    display: grid;
+    place-items: left;
+}
+
+.faq_text_container h1 {
+    color: #3F3D56;
+    font-size: 50px;
+
+}
+
+.faq_text_container p {
+    font-size: 18px;
+
+    color: #5b596b;
+    font-weight: 600;
+}

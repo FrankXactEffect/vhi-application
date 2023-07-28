@@ -1,0 +1,47 @@
+.services-submenu {
+    width: 155px;
+    position: absolute;
+    top: 68px;
+    list-style: none;
+    text-align: start;
+
+}
+
+
+.services-submenu li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    cursor: pointer;
+    height: 40px;
+    box-shadow: 0px 1px 2px 1px rgb(174, 174, 174);
+
+}
+
+
+
+.services-submenu li a:hover {
+    background-color: rgb(253, 252, 252);
+    height: 40px;
+    width: 165px;
+}
+
+.services-submenu .clicked {
+    display: none;
+}
+
+#stylCmer {
+    height: 40px;
+}
+
+#styOld {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+}
+
+#styOld a:hover {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}

@@ -1,0 +1,187 @@
+/* ============================inputs================================== */
+
+.oldInputContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+#level-one-old {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 2%;
+}
+
+
+
+.level-one-old {
+    width: 25%;
+    height: 80px;
+    /* background-color: cadetblue; */
+
+}
+
+.level-one-old label {
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #110f2fa6;
+}
+
+.level-one-old input {
+    width: 85%;
+    height: 45px;
+    border-radius: 25px;
+    padding-left: 15px;
+    font-size: 18px;
+    padding-right: 15px;
+    box-shadow: 0px 1px 4px 1px rgb(110, 110, 110);
+    border: none;
+    outline: none;
+    z-index: 11;
+
+}
+
+
+/* ===================================================================== */
+
+
+/* =====================upload===================================== */
+.oldpload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* margin-right: 20%; */
+    height: 50vh;
+}
+
+
+.box-container-four {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-right: 5%;
+    margin-top: 1%;
+    height: 30vh;
+    align-items: center;
+
+
+}
+
+.box-container-three {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1%;
+    height: 30vh;
+    align-items: center;
+    margin-right: 5%;
+}
+
+
+.old-upload-box {
+    width: 18%;
+    height: 180px;
+    border: 1px dashed black;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5%;
+}
+
+
+
+.olduploadIcon {
+    cursor: pointer;
+    color: rgb(3, 184, 3);
+    font-size: 55px !important;
+}
+
+.old-upload-box p {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 10px;
+    word-spacing: 5px;
+    color: #3f3d56a6;
+}
+
+.uploadIcon {
+    cursor: pointer;
+    color: rgb(3, 184, 3);
+    font-size: 55px !important;
+}
+
+.old-upload-box p {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 10px;
+    word-spacing: 5px;
+    color: #3f3d56a6;
+}
+
+
+
+
+
+
+
+
+/* =============================================== */
+.banner__title {
+    display: flex;
+    justify-content: center;
+}
+
+.banner__title h1 {
+    color: #3F3D56;
+    font-size: 60px;
+    margin-top: 10px;
+}
+
+
+.ques-con {
+    display: flex;
+    justify-content: right;
+    position: fixed;
+    bottom: 25%;
+    left: 94%;
+
+}
+
+.question-icon {
+    font-size: 55px !important;
+    color: rgb(3, 184, 3);
+}
+
+
+.oldbuttonContainer {
+    margin-top: 6%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%;
+
+
+}
+
+.oldbuttonContainer button {
+    color: white;
+    width: 30%;
+    height: 55px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: rgb(3, 184, 3);
+    z-index: 11;
+    border: none;
+    outline: none;
+    box-shadow: 0px 1px 4px 1px rgb(97, 97, 97);
+
+}
+
+.oldbuttonContainer button:hover {
+    background-color: rgb(10, 167, 10);
+}

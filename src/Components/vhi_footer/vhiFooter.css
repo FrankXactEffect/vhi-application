@@ -1,0 +1,42 @@
+.vhi_footer_container {
+    display: flex;
+    margin-top: 3%;
+    background-color: rgb(243, 239, 239);
+    height: 20vh;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3%;
+
+}
+
+.vhi_footer_container img {
+    width: 150px;
+    height: 52px;
+    padding-left: 5%;
+}
+
+.vhi_footer_container {
+    padding-left: 5%;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: space-between;
+    width: 12%;
+
+
+}
+
+.social-handles {
+    font-size: 30px !important;
+    color: #23222f;
+}
+
+.copy-right p {
+    font-size: 12px;
+    color: #23222f;
+}
+
+.footer-logo-file {
+    margin-left:2%;
+}
