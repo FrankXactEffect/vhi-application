@@ -41,14 +41,17 @@ function VhiOldCom() {
                         <div className='old-upload-box'>
                             <UploadFileIcon className='olduploadIcon ' />
                             <p>Car License</p>
+                            <input type="file" />
                         </div>
                         <div className='old-upload-box'>
                             <UploadFileIcon className='olduploadIcon ' />
                             <p>Road Worthiness</p>
+                            <input type="file" />
                         </div>
                         <div className='old-upload-box'>
                             <UploadFileIcon className='olduploadIcon ' />
                             <p>Insurance Letter</p>
+                            <input type="file" />
                         </div>
                     </div>
 
@@ -57,10 +60,12 @@ function VhiOldCom() {
                         <div className='old-upload-box'>
                             <UploadFileIcon className='uploadIcon' />
                             <p>Heavy Goods Permit</p>
+                            <input type="file" />
                         </div>
                         <div className='old-upload-box'>
                             <UploadFileIcon className='uploadIcon' />
                             <p>Carrier Permit</p>
+                            <input type="file" />
                         </div>
                     </div>
                 </div>

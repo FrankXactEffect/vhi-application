@@ -32,14 +32,17 @@ function PrivateInput() {
                     <div className='private-upload-box'>
                         <UploadFileIcon className='privateuploadIcon ' />
                         <p>Car License</p>
+                        <input type="file" />
                     </div>
                     <div className='private-upload-box'>
                         <UploadFileIcon className='privateuploadIcon ' />
                         <p>Road Worthiness</p>
+                        <input type="file" />
                     </div>
                     <div className='private-upload-box'>
                         <UploadFileIcon className='privateuploadIcon ' />
                         <p>Insurance Letter</p>
+                        <input type="file" />
                     </div>
                 </div>
 

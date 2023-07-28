@@ -64,3 +64,31 @@
 
 
         </div>
+
+
+
+
+           // const handleClickShowPassword = () => {
+    //     setPassword([...password, { showValue: !password.showValue }])
+    // }
+    // const handleMouseDownPassword = (event) => {
+    //     event.preventDefault();
+    // };
+
+    // const handlePasswordChange = (prop) => (event) => {
+    //     setPassword([...password, { [prop]: event.target.value }])
+    // };
+
+
+    // handleConfirm passsword icon toggle
+    // const handleConfirmClickShowPassword = () => {
+    //     setConfirmation([...confirmation, { confirmPassword: !confirmation.confirmPassword }])
+    // }
+    // const handleMouseDownConfirmPassword = (event) => {
+    //     event.preventDefault();
+    // };
+    // const handleConfirmPasswordChange = (prop) => (event) => {
+    //     setConfirmation([...confirmation, { [prop]: event.target.value }])
+    // };
+type={password.showValue ? "text" : "password"} onChange={handlePasswordChange("password")} value={password.value}
+type={confirmation.confirmPassword ? "text" : "password"} onChange={handleConfirmPasswordChange("password")} value={confirmation.password}
