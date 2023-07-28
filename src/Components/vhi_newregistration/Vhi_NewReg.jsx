@@ -56,8 +56,9 @@ function Vhi_NewReg() {
                 <div className='box-container'>
 
                     <div className='single-traced-upload-box'>
-                        <UploadFileIcon className='uploadIcon' />
+                        <UploadFileIcon className='uploadIcon-new' />
                         <p>Identity Card</p>
+                        <input type="file" />
                     </div>
 
                 </div>

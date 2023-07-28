@@ -3,6 +3,7 @@ import './leftLogin.css'
 import IMAGES from '../../../images/index.js';
 import LoginInputs from './logininputs/LoginInputs';
 
+
 function LeftLogin() {
     return (
         <div className='leftloginContainer'>

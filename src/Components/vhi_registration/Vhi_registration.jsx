@@ -40,14 +40,17 @@ function Vhi_registration() {
                         <div className='traced-upload-box'>
                             <UploadFileIcon className='uploadIcon' />
                             <p>Owner Passport</p>
+                            <input type="file" />
                         </div>
                         <div className='traced-upload-box'>
                             <UploadFileIcon className='uploadIcon' />
                             <p>Attestation Letter</p>
+                            <input type="file" />
                         </div>
                         <div className='traced-upload-box'>
                             <UploadFileIcon className='uploadIcon' />
                             <p>Purchase Reciept</p>
+                            <input type="file" />
                         </div>
                     </div>
 
@@ -57,14 +60,17 @@ function Vhi_registration() {
                         <div className='traced-upload-box'>
                             <UploadFileIcon className='uploadIcon' />
                             <p>Delivery Note</p>
+                            <input type="file" />
                         </div>
                         <div className='traced-upload-box'>
                             <UploadFileIcon className='uploadIcon' />
                             <p>Proof of ownership</p>
+                            <input type="file" />
                         </div>
                         <div className='traced-upload-box'>
                             <UploadFileIcon className='uploadIcon' />
                             <p>Driver's License</p>
+                            <input type="file" />
                         </div>
                     </div>
                 </div>

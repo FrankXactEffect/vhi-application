@@ -4,6 +4,7 @@ import './leftSignup.css'
 import IMAGES from '../../../images/index.js';
 import SignupInput from './signupInputs/SignupInput';
 
+
 function LeftSignup() {
     return (
         <div className='leftloginContainer'>
@@ -16,6 +17,7 @@ function LeftSignup() {
                 </div>
             </div>
             <SignupInput />
+
         </div>
     )
 }

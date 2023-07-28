@@ -3,47 +3,71 @@ import './loginInput.css'
 import { Link } from 'react-router-dom'
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import axios from 'axios';
+import { useHistory } from "react-router-dom"
 
 
 function LoginInputs() {
+    const history = useHistory()
+    const [email, setEmail] = useState("")
 
-    const [values, setValues] = useState({
-        password: "",
-        showPassword: false,
-    });
+    const [password, setPassword] = useState("");
 
-    const handleClickShowPassword = () => {
-        setValues({ ...values, showPassword: !values.showPassword })
+    const logged = () => {
+        history.push("/VhiMainHome");
     }
-    const handleMouseDownPassword = (event) => {
-        event.preventDefault();
-    };
 
-    const handlePasswordChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value })
-    };
+    async function logIn(e) {
+        e.preventDefault()
+
+        try {
+            let item = { email, password }
+            console.warn(item)
+            const response = await axios.post("https://licence-reg-renewal-api.onrender.com/user/login", {
+
+                email: email,
+                password: password,
+
+            })
+            window.localStorage.setItem("token", response.data.accessToken)
+            console.log(response)
+            alert('welcome!')
+            logged();
+        } catch (err) {
+            console.log(err)
+            alert('failed, check your details')
+
+        }
+    }
+
+
+
+
     return (
         <div className='login-InputContainers'>
             <form>
                 <div className="email-input-container">
                     <label htmlFor="Email">Email</label>
-                    <input type="text" />
+                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="first-row-text" />
                 </div>
 
                 <div className="password-input-container">
                     <label for="password">Password</label>
                     <div className="input-icon-container" >
-                        <input type={values.showPassword ? "text" : "password"} onChange={handlePasswordChange("password")} value={values.password} />
-                        <span onClick={handleClickShowPassword} onMouseDown={handleMouseDownPassword}>{values.showPassword ? <VisibilityIcon className='visibleIcon' /> : <VisibilityOffIcon className='visibleOffIcon' />}</span>
+                        <input type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
+                        {/* <span onClick={handleClickShowPassword} onMouseDown={handleMouseDownPassword}>{password.showPassword ? <VisibilityIcon className='visibleIcon' /> : <VisibilityOffIcon className='visibleOffIcon' />}</span> */}
                     </div>
                     <Link to={'VhipasswordRecovery'}><p>Forgot Password?</p></Link>
                 </div>
                 <Link to={'VhiMainHome'} className='login-submit-button'>
-                    <button type="submit">Login</button>
+                    <button type="submit" onClick={logIn}>Login</button>
                 </Link>
                 <p className='login-optional-link'>Don't have an account?<Link to={'VhiSignup'}>SignUp</Link></p>
 
             </form>
+
+
+
 
         </div>
     )
