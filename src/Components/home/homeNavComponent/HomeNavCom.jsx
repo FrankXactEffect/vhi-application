@@ -3,11 +3,17 @@ import './homeNavCom.css'
 import { NavLink } from 'react-router-dom'
 import IMAGES from '../../../images/index.js';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 
 function HomeNavCom() {
     return (
-        <nav className='homeNavComponent_Container'>
+        <motion.nav
+            className='homeNavComponent_Container'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+        >
             <Link to={'/'} className='navLogo'>
                 <img src={IMAGES.imgOne} alt="#" />
             </Link>
@@ -27,7 +33,7 @@ function HomeNavCom() {
                 </Link>
 
             </div>
-        </nav>
+        </motion.nav>
     )
 }
 

@@ -1,10 +1,17 @@
 import React from 'react'
 import './fqaList.css'
 import IMAGES from '../../../../images/index.js'
+import { motion } from 'framer-motion'
+
+
 function FqaList() {
     return (
-        <div className='faqList_container'>
-            <div className='left'>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className='faqList_container'>
+            <motion.div className='left'>
                 <div className='Date_time'>
                     <img src={IMAGES.imgEleven} id='img1' alt="" />
                     <div className='flex'>
@@ -53,17 +60,17 @@ function FqaList() {
                             number will lbe assigned to you for a year.</p>
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
 
-            <div className='right'>
+            <motion.div className='right'>
                 <img src={IMAGES.imgFourteen} alt="" />
-            </div>
+            </motion.div>
 
 
 
 
-        </div>
+        </motion.div>
     )
 }
 

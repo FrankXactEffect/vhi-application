@@ -2,11 +2,17 @@ import React from 'react'
 import IMAGES from '../../images/index.js'
 import '../Pages/About.css'
 import Vhi_footer from '../vhi_footer/Vhi_footer.jsx'
+import { motion } from 'framer-motion'
 
 
 const About = () => {
   return (
-    <div className='main_page'>
+    <motion.div
+      className='main_page'
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
 
       <h1 className='Header'>About Us</h1>
 
@@ -17,7 +23,7 @@ const About = () => {
 
       <img id='image' src={IMAGES.imgNine} alt="" />
       <Vhi_footer />
-    </div>
+    </motion.div>
 
 
   )

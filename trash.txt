@@ -92,3 +92,682 @@
     // };
 type={password.showValue ? "text" : "password"} onChange={handlePasswordChange("password")} value={password.value}
 type={confirmation.confirmPassword ? "text" : "password"} onChange={handleConfirmPasswordChange("password")} value={confirmation.password}
+
+
+====================================================================================
+      <div>
+        <h1 className='contact-us-txt'>Contact Us</h1>
+        <p className='text'>We're here to help! Reach out to Us.</p>
+
+
+        <form className='inputs'>
+          <label htmlFor="">Name</label>
+          <input type="text" name="" id="box" />
+
+          <label htmlFor="">E-mail</label>
+          <input type="text" name="" id="box" /> 
+
+          <label htmlFor="">Text</label> 
+          <input type="text" name="" id="box2" />
+
+          <button className='Submit'>Submit</button>
+        </form>
+      </div>
+
+      <div>
+        <img className='contact_img' src={IMAGES.imgTen} alt="" />
+      </div>
+
+
+
+
+
+
+  import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+  
+  function App(){
+    const notify = () => toast("Wow so easy!");
+
+    return (
+      <div>
+        <button onClick={notify}>Notify!</button>
+        <ToastContainer />
+      </div>
+    );
+  }
+
+
+
+
+  const handleSubmit = async () => {
+    try {
+      const response = await axios.post(url, userData);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
+
+
+
+  ========================================
+import type { APIRoute } from "astro";
+
+export const post: APIRoute = async ({ request }) => {
+  const data = await request.formData();
+  const name = data.get("name");
+  const email = data.get("email");
+  const message = data.get("message");
+  // Validate the data - you'll probably want to do more than this
+  if (!name || !email || !message) {
+    return new Response(
+      JSON.stringify({
+        message: "Missing required fields",
+      }),
+      { status: 400 }
+    );
+  }
+  // Do something with the data, then return a success response
+  return new Response(
+    JSON.stringify({
+      message: "Success!"
+    }),
+    { status: 200 }
+  );
+};
+
+
+
+
+import { useState } from "preact/hooks";
+
+export default function Form() {
+  const [responseMessage, setResponseMessage] = useState("");
+
+  async function submit(e: SubmitEvent) {
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+    const response = await fetch("/api/feedback", {
+      method: "POST",
+      body: formData,
+    });
+    const data = await response.json();
+    if (data.message) {
+      setResponseMessage(data.message);
+    }
+  }
+
+  return (
+    <form onSubmit={submit}>
+      <label>
+        Name
+        <input type="text" id="name" name="name" required />
+      </label>
+      <label>
+        Email
+        <input type="email" id="email" name="email" required />
+      </label>
+      <label>
+        Message
+        <textarea id="message" name="message" required />
+      </label>
+      <button>Send</button>
+      {responseMessage && <p>{responseMessage}</p>}
+    </form>
+  );
+}
+=======================================
+
+
+
+import React from "react";
+
+const App = () => {
+  return (
+    <div className="App">
+      <form>
+        <input type="text" />
+
+        <input type="file" />
+      </form>
+    </div>
+  );
+};
+
+import React, { useState } from "react";
+
+const App = () => {
+  const [name, setName] = useState("");
+  const [selectedFile, setSelectedFile] = useState(null);
+  return (
+    <div className="App">
+      <form>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+
+        <input
+          type="file"
+          value={selectedFile}
+          onChange={(e) => setSelectedFile(e.target.files[0])}
+        />
+      </form>
+    </div>
+  );
+};
+
+
+
+const FileUploader = () => {
+    const handleFileInput = () => {}
+
+    return (
+        <div className="file-uploader">
+            <input type="file" onChange={handleFileInput}>
+        </div>
+    )
+}
+
+
+
+import React, {useRef} from 'react'
+
+const FileUploader = ({onFileSelect}) => {
+    const fileInput = useRef(null)
+
+    const handleFileInput = (e) => {
+        // handle validations
+        onFileSelect(e.target.files[0])
+    }
+
+    return (
+        <div className="file-uploader">
+            <input type="file" onChange={handleFileInput}>
+            <button onClick={e => fileInput.current && fileInput.current.click()} className="btn btn-primary">
+        </div>
+    )
+}
+
+ //     axios.post(ENDPOINT_URL, formData)
+    //         .then((response) => {
+    //             const token = window.localStorage.getItem("token")
+    //             const token = response.data.token; // Replace 'token' with the key that holds the token value in the API response
+    //             setToken(token);
+    //             
+    //         })
+    //         .catch((error) => {
+    //             // Handle error
+    //             toast.error('Error generating token:', error);
+    //         });
+
+
+
+import React, { useState } from "react";
+
+const App = () => {
+  const [name, setName] = useState("");
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const submitForm = () => {};
+
+  return (
+    <div className="App">
+      <form>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+
+        <FileUploaded
+          onFileSelectSuccess={(file) => setSelectedFile(file)}
+          onFileSelectError={({ error }) => alert(error)}
+        />
+
+        <button onClick={submitForm}>Submit</button>
+      </form>
+    </div>
+  );
+};
+
+
+
+
+const submitForm = () => {
+  const formData = new FormData();
+  formData.append("name", name);
+  formData.append("file", selectedFile);
+
+  axios
+    .post(UPLOAD_URL, formData)
+    .then((res) => {
+      alert("File Upload success");
+    })
+    .catch((err) => alert("File Upload Error"));
+};
+
+
+==================================================================
+
+
+
+import React, { useState } from 'react';
+import axios from 'axios'; // If you prefer to use Axios for API requests
+
+const ApiFetchComponent = () => {
+  // State variables for file and text inputs
+  const [fileInput, setFileInput] = useState(null);
+  const [textInput, setTextInput] = useState('');
+
+  // Event handler for file input change
+  const handleFileInputChange = (event) => {
+    const file = event.target.files[0]; // Assuming you only need a single file
+    setFileInput(file);
+  };
+
+  // Event handler for text input change
+  const handleTextInputChange = (event) => {
+    const text = event.target.value;
+    setTextInput(text);
+  };
+
+  // Event handler for form submission
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    // Construct your API request using fileInput and textInput values
+    // For example, if you are using FormData for file uploads:
+    const formData = new FormData();
+    formData.append('file', fileInput);
+    formData.append('text', textInput);
+
+    // Make the API request using fetch or axios
+    // Example with fetch:
+    fetch('YOUR_API_ENDPOINT', {
+      method: 'POST',
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Handle the API response data
+        console.log(data);
+      })
+      .catch((error) => {
+        // Handle errors
+        console.error('Error fetching data:', error);
+      });
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      {/* File input */}
+      <input type="file" onChange={handleFileInputChange} />
+
+      {/* Text input */}
+      <input type="text" value={textInput} onChange={handleTextInputChange} />
+
+      {/* Submit button */}
+      <button type="submit">Fetch API</button>
+    </form>
+  );
+};
+
+export default ApiFetchComponent;
+
+
+
+===========================token generator===================
+import React, { useState } from 'react';
+import FileInput from './FileInput';
+import TextInput from './TextInput';
+import axios from 'axios';
+
+const TokenGenerator = () => {
+  const [file, setFile] = useState(null);
+  const [text, setText] = useState('');
+  const [token, setToken] = useState('');
+
+  const handleFileChange = (file) => {
+    setFile(file);
+  };
+
+  const handleTextChange = (text) => {
+    setText(text);
+  };
+
+  const generateToken = () => {
+    // Call the API here with the file and text data to generate the token
+    // For example, you can use Axios to make the API request
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('text', text);
+
+    axios.post('YOUR_API_ENDPOINT_URL', formData)
+      .then((response) => {
+        const token = response.data.token; // Replace 'token' with the key that holds the token value in the API response
+        setToken(token);
+      })
+      .catch((error) => {
+        // Handle error
+        console.error('Error generating token:', error);
+      });
+  };
+
+  return (
+    <div>
+      <FileInput onFileChange={handleFileChange} />
+      <TextInput onTextChange={handleTextChange} />
+      <button onClick={generateToken}>Generate Token</button>
+      {token && <p>Generated Token: {token}</p>}
+    </div>
+  );
+};
+
+export default TokenGenerator;
+======================================================
+
+old com-https://licence-reg-renewal-api.onrender.com/user/editOldCommerDoc/64b6924a57dcf735b399f4c0
+GET
+get user profile by id
+userPro-https://licence-reg-renewal-api.onrender.com/user/getProfile/64b6f39bf2abb427fd45c8d1
+
+update user-https://licence-reg-renewal-api.onrender.com/user/updateProfile/64b6f39bf2abb427fd45c8d1
+
+old-private-https://licence-reg-renewal-api.onrender.com/user/oldPrivate
+get all-https://licence-reg-renewal-api.onrender.com/user/allPrivateDoc
+get one old privated car-https://licence-reg-renewal-api.onrender.com/user/singlePrivateDoc/64b6fc96f2abb427fd45c8db
+post new car reg-https://licence-reg-renewal-api.onrender.com/user/regNewCar
+
+
+
+    axios.post('YOUR_API_ENDPOINT_URL', formData)
+      .then((response) => {
+        const token = response.data.token; // Replace 'token' with the key that holds the token value in the API response
+        setToken(token);
+      })
+      .catch((error) => {
+        // Handle error
+        console.error('Error generating token:', error);
+      });
+  };
+
+
+
+          axios
+            .post(UPLOAD_URL, formData)
+            .then((res) => {
+                alert("File Upload success");
+            })
+            .catch((err) => alert("File Upload Error"));
+
+
+
+======================todoInput===============
+   const fetchTodos = async () => {
+        const token = window.localStorage.getItem("token")
+
+        const res = await axios.get("https://todo-api-bvr7.onrender.com/todo/", {
+            headers: { "Authorization": `Bearer ${token}` }
+        },)
+
+        console.log("Todos: ", res.data);
+        setTasks(res?.data?.todos);
+    }
+
+    useEffect(() => {
+        fetchTodos();
+    }, [])
+
+
+
+     const [email, setEmail] = useState("");
+
+
+                             <div className='level-one' id='level-one'>
+                            <label for="First Name">email address</label>
+                            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="first__row" />
+                        </div>
+
+
+
+
+
+  // const fetchUsers = async () => {
+    //     const token = window.localStorage.getItem("token")
+    //     const res = await axios.get("https://license-registration.onrender.com/user/getProfile/", {
+    //         headers: { "Authorization": `Bearer ${token}` }
+    //     },)
+
+    //     console.log(res.data);
+    // }
+
+    // useEffect(() => {
+    //     fetchUsers();
+    // }, [])
+
+
+
+
+
+
+
+
+
+const genderArray = [{ id: 1, label: "M", value: "M" }, { id: 2, label: "F", value: "F" }];
+
+   const submitForm = async (event) => {
+
+        event.preventDefault();
+
+
+
+        try {
+
+            const formData = new FormData();
+            formData.append("first_name", first_name);
+            formData.append("last_name", last_name);
+            formData.append("address", address);
+            formData.append("identity_number", identity_number);
+            formData.append("date_of_birth", date_of_birth);
+
+            formData.append("gender", gender);
+            formData.append("image", image);
+
+
+            const token = window.localStorage.getItem("token");
+            console.log(token, "token is here");
+
+
+            const ENDPOINT_URL = `${process.env.REACT_APP_BACKEND_URI}/user/profile`
+            // const ENDPOINT_URL = "https://licence-reg-renewal-api.onrender.com/user/profile"
+            const response = await axios.post(ENDPOINT_URL, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    "Content-Type": "multipart/form-data",
+                    "Accept": "application/json"
+                },
+                body: formData,
+
+            });
+
+
+            if (!response.ok) {
+                throw new Error('Request failed');
+            }
+
+            console.log('API response:', response.data);
+            toast.success('successful');
+
+        } catch (error) {
+            console.error('Error fetching data:', error.message);
+            toast.error('failed');
+        }
+
+
+
+            {/* <Link to={"VhiFQA"}>
+                <div className='ques-con'>
+                    <HelpIcon className='question-icon' />
+                </div>
+            </Link> */}
+
+
+======================================================
+const submitForm = async (event) => {
+
+        event.preventDefault();
+
+
+
+        try {
+
+            const formData = new FormData();
+            formData.append("first_name", first_name);
+            formData.append("last_name", last_name);
+            formData.append("address", address);
+            formData.append("identity_number", identity_number);
+            formData.append("date_of_birth", date_of_birth);
+            formData.append("gender", gender);
+            formData.append("image", image);
+
+
+            const token = window.localStorage.getItem("token");
+            console.log(token, "token is here");
+
+
+            // const ENDPOINT_URL = `${process.env.REACT_APP_BACKEND_URI}/user/profile`
+            const ENDPOINT_URL = "https://licence-reg-renewal-api.onrender.com/user/profile"
+            const response = await axios.post(ENDPOINT_URL, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    "Content-Type": "multipart/form-data",
+                    "Accept": "application/json",
+                },
+                body: formData,
+
+
+            });
+            if (!response.ok) {
+                throw new Error('Request failed');
+            }
+            toast.success('successful');
+            logged();
+
+        } catch (error) {
+            console.error('Error fetching data:', error.message);
+            toast.error('failed');
+        }
+
+------------------------------------------------------------------------
+<nav className='vhi__navbarContainer'>
+                <Link to={"/"} className='navbar-logo'>
+                    <img className='vpr_logo_file' src={IMAGES.imgOne} alt="" />
+                </Link>
+                <div className='nav-box'>
+                    <ul className='nav-items'>
+
+                        {navItems.map(item => {
+                            if (item.id === 3) {
+                                return (
+                                    <li
+                                        key={item.id}
+                                        className={item.cName}
+                                        onMouseEnter={() => setDropdown(true)}
+                                        onMouseLeave={() => setDropdown(false)}
+                                    >
+
+                                        <NavLink to={item.path}><span>{item.title}</span><ArrowDropDownCircleIcon className='drop-icon' /></NavLink>
+                                        {dropdown && <Dropdown />}
+                                    </li>)
+                            } else if (item.id === 2) {
+                                return (
+                                    <li key={item.id} id={item.styleid} className={item.cName}>
+                                        <NavLink to={item.path}>{item.title}</NavLink>
+                                    </li>
+                                )
+                            } else if (item.id === 5) {
+                                return (
+                                    <li key={item.id} id={item.contactStyle} className={item.cName}>
+                                        <NavLink to={item.path}>{item.title}</NavLink>
+                                    </li>
+                                )
+                            } else if (item.id === 1) {
+                                return (
+                                    <li key={item.id} id={item.styleHome} className={item.cName}>
+                                        <NavLink to={item.path}>{item.title}</NavLink>
+                                    </li>
+                                )
+
+                            } else if (item.id === 6) {
+                                return (
+                                    <li key={item.id} id={item.fqaStyle} className={item.cName}>
+                                        <NavLink to={item.path}>{item.title}</NavLink>
+                                    </li>
+                                )
+                            } else if (item.id === 4) {
+                                return (
+                                    <li key={item.id} id={item.styleAbt} className={item.cName}>
+                                        <NavLink to={item.path}>{item.title}</NavLink>
+                                    </li>
+                                )
+                            } else {
+                                return (
+                                    <li key={item.id} className={item.cName}>
+                                        <NavLink to={item.path}>{item.title}</NavLink>
+                                    </li>
+                                )
+                            }
+                        })}
+                    </ul>
+
+
+
+
+
+                </div>
+
+
+
+            </nav>
+            --------------------------------------------------------------------------------------------
+
+ {/* <span onClick={handleClickShowPassword} onMouseDown={handleMouseDownPassword}>{password.showValue ? <VisibilityIcon className='visibleIcon' /> : <VisibilityOffIcon className='visibleOffIcon' />}</span> */}
+
+
+            {/* <span onClick={handleConfirmClickShowPassword} onMouseDown={handleMouseDownConfirmPassword}>{confirmation.confirmPassword ? <VisibilityIcon className='visibleIcon' /> : <VisibilityOffIcon className='visibleOffIcon' />}</span> */}
+
+
+<div className='second-row-item'>
+                    <div className='password-field' id='level-one'>
+                        <label for="password">Password</label>
+                        <div className="second-row-input-div" >
+                            <input type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
+                           
+                        </div>
+                    </div>
+                    <div className='confirm-password-field' id='level-one'>
+                        <label for="confirm password">Confirm Password</label>
+                        <div className="second-row-input-div">
+                            <input type="password" onChange={(e) => setConfirmation(e.target.value)} value={confirmation} />
+                            
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+

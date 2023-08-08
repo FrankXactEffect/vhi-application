@@ -1,12 +1,13 @@
 import React from 'react'
 import './private.css'
+import { motion } from 'framer-motion'
 
 
 function PrivateTxt() {
     return (
-        <div className='private-text'>
+        <motion.div className='private-text'>
             <h1>Vehicle Plate Renewal</h1>
-        </div>
+        </motion.div>
     )
 }
 

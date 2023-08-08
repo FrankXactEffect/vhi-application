@@ -5,10 +5,13 @@ import UploadFileIcon from '@mui/icons-material/UploadFile';
 import Vhi_footer from '../../vhi_footer/Vhi_footer';
 import HelpIcon from '@mui/icons-material/Help';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+
 
 function PrivateInput() {
     return (
-        <>
+        <motion.div>
             <form className='privateInputContainer'>
                 <div className='privateSubdiv'>
                     <div className='level-one-private' id='level-one-private'>
@@ -57,7 +60,7 @@ function PrivateInput() {
                     <HelpIcon className='question-icon-private' />
                 </div>
             </Link>
-        </>
+        </motion.div>
     )
 }
 

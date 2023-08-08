@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import './signupInput.css'
 import { Link } from 'react-router-dom'
-// import VisibilityIcon from '@mui/icons-material/Visibility';
-// import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import axios from 'axios';
 import { useHistory } from "react-router-dom"
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { motion } from 'framer-motion';
 
 function SignupInput() {
     const history = useHistory()
@@ -14,6 +16,8 @@ function SignupInput() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("");
     const [confirmation, setConfirmation] = useState("")
+    const [showPassword, setShowPassword] = useState(false); // Track password visibility
+    const [showconfirmPassword, setConfirmShowPassword] = useState(false);
 
     const logged = () => {
         history.push("/VhiLogin");
@@ -24,25 +28,35 @@ function SignupInput() {
         try {
             let item = { name, email, password, confirmation }
             console.warn(item)
-            const response = await axios.post("https://licence-reg-renewal-api.onrender.com/user/create", {
+            const response = await axios.post("https://license-registration.onrender.com/user/create", {
                 name: name,
                 email: email,
                 password: password,
                 repeat_password: confirmation
             })
             console.log(response)
-            alert('successfully created, proceed!')
+            toast.success('successfully created, proceed!')
             logged();
         } catch (err) {
+
             console.log(err)
-            alert('failed, check your details')
+            toast.error('failed, check your details')
         }
     }
 
-
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
+    const toggleConPasswordVisibility = () => {
+        setConfirmShowPassword(!showconfirmPassword);
+    };
 
     return (
-        <div className='loginInputContainer'>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className='loginInputContainer'>
             <form>
                 <div className='first-row-item'>
                     <div className='name-field' id='level-one'>
@@ -55,32 +69,57 @@ function SignupInput() {
                     </div>
                 </div>
 
-                <div className='second-row-item'>
-                    <div className='password-field' id='level-one'>
-                        <label for="password">Password</label>
-                        <div className="second-row-input-div" >
-                            <input type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
-                            {/* <span onClick={handleClickShowPassword} onMouseDown={handleMouseDownPassword}>{password.showValue ? <VisibilityIcon className='visibleIcon' /> : <VisibilityOffIcon className='visibleOffIcon' />}</span> */}
+
+
+                <div className="second-row-item">
+                    {/* Password Field */}
+                    <div className="password-field" id="level-one">
+                        <label htmlFor="password">Password</label>
+                        <div className="second-row-input-div">
+                            <input
+                                type={showPassword ? 'text' : 'password'}
+                                onChange={(e) => setPassword(e.target.value)}
+                                value={password}
+                            />
+                            {showPassword ? (
+                                <VisibilityIcon onClick={togglePasswordVisibility} />
+
+                            ) : (
+                                <VisibilityOffIcon onClick={togglePasswordVisibility} />
+                            )}
                         </div>
                     </div>
-                    <div className='confirm-password-field' id='level-one'>
-                        <label for="confirm password">Confirm Password</label>
+                    {/* Confirm Password Field */}
+                    <div className="confirm-password-field" id="level-one">
+                        <label htmlFor="confirm password">Confirm Password</label>
                         <div className="second-row-input-div">
-                            <input type="password" onChange={(e) => setConfirmation(e.target.value)} value={confirmation} />
-                            {/* <span onClick={handleConfirmClickShowPassword} onMouseDown={handleMouseDownConfirmPassword}>{confirmation.confirmPassword ? <VisibilityIcon className='visibleIcon' /> : <VisibilityOffIcon className='visibleOffIcon' />}</span> */}
+                            <input
+                                type={showconfirmPassword ? 'text' : 'password'}
+                                onChange={(e) => setConfirmation(e.target.value)}
+                                value={confirmation}
+                            />
+                            {showconfirmPassword ? (
+                                <VisibilityIcon onClick={toggleConPasswordVisibility} />
+                            ) : (
+                                <VisibilityOffIcon onClick={toggleConPasswordVisibility} />
+                            )}
                         </div>
-
                     </div>
                 </div>
+
+
+
+
                 <div className='inputButtonContainer'>
                     <button type="submit" onClick={signUp}>Sign Up</button>
                 </div>
+                <ToastContainer />
                 <p className='optional-link'>Already have an account?<Link to={'VhiLogin'}>Login</Link></p>
             </form>
 
 
 
-        </div>
+        </motion.div>
     )
 }
 

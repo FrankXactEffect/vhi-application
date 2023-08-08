@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import './loginInput.css'
 import { Link } from 'react-router-dom'
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+// import VisibilityIcon from '@mui/icons-material/Visibility';
+// import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import axios from 'axios';
 import { useHistory } from "react-router-dom"
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { motion } from 'framer-motion';
 
 function LoginInputs() {
     const history = useHistory()
@@ -23,19 +25,19 @@ function LoginInputs() {
         try {
             let item = { email, password }
             console.warn(item)
-            const response = await axios.post("https://licence-reg-renewal-api.onrender.com/user/login", {
+            const response = await axios.post("https://license-registration.onrender.com/user/login", {
 
                 email: email,
                 password: password,
 
             })
-            window.localStorage.setItem("token", response.data.accessToken)
+            window.localStorage.setItem("accessToken", response.data.accessToken)
             console.log(response)
-            alert('welcome!')
+            toast.success('welcome!')
             logged();
         } catch (err) {
             console.log(err)
-            alert('failed, check your details')
+            toast.error('failed, check your details')
 
         }
     }
@@ -44,7 +46,11 @@ function LoginInputs() {
 
 
     return (
-        <div className='login-InputContainers'>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className='login-InputContainers'>
             <form>
                 <div className="email-input-container">
                     <label htmlFor="Email">Email</label>
@@ -62,6 +68,8 @@ function LoginInputs() {
                 <Link to={'VhiMainHome'} className='login-submit-button'>
                     <button type="submit" onClick={logIn}>Login</button>
                 </Link>
+                <ToastContainer />
+
                 <p className='login-optional-link'>Don't have an account?<Link to={'VhiSignup'}>SignUp</Link></p>
 
             </form>
@@ -69,7 +77,7 @@ function LoginInputs() {
 
 
 
-        </div>
+        </motion.div>
     )
 }
 

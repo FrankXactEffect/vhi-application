@@ -1,106 +1,100 @@
-.vhi__navbarContainer {
-    height: 15vh;
+/* Navbar.css */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    /* background-color: aqua; */
+    padding-bottom: 20px;
+    padding-left: 35px;
+    color: aliceblue;
 
 }
 
-.navbar-logo {
-    margin-left: 60px;
+
+.logo {
+    margin-left: 20px;
 }
 
-.vpr_logo_file {
-    width: 185px;
-    height: 85px;
-
-
-
+.logo img {
+    width: 190px;
 }
 
-.nav-items {
-    display: flex;
+.nav-links {
     list-style: none;
-    text-align: center;
-    width: 100vh;
-    height: 15vh;
-    justify-content: center;
-    align-items: center;
-    margin-right: 20%;
-    /* background-color: blueviolet; */
-
-}
-
-.drop-icon {
-    font-size: 17px !important;
-    position: relative;
-    bottom: -1px;
-    left: 5px;
-    color: rgb(3, 184, 3);
-}
-
-.nav-item {
     display: flex;
-    align-items: center;
-
+    gap: 57px;
+    margin-right: 150px;
 
 }
 
-.nav-item a {
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a {
     text-decoration: none;
     color: #4E4C4C;
     font-weight: 500;
-
-    width: 140px;
-    height: 80px;
-    /* background-color: aqua; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
 }
 
-.nav-item a.active {
+.nav-links li a.active {
     text-decoration: none;
     font-weight: 600;
     color: rgb(11, 201, 11);
 }
 
-#styleTwo {
-    padding-right: 5%;
-}
-
-#styleCon {
-    /* background-color: aqua; */
-    width: 0px;
-    padding-right: 10%;
-}
-
-#styleCon a {
-    width: 40px;
-    padding-right: 10%;
-}
-
-#styleHom a {
-    /* background-color: blueviolet; */
-    width: 90px;
-    margin-right: 20%;
-
-}
-
-#stylefqa a {
-    width: 90px;
-
-}
-
-#abtStyle a {
-    width: 140px;
-}
-
-.nav-item a:hover {
+.nav-links li a:hover {
     color: rgb(3, 184, 3) !important;
     transition: transform 200ms ease-in-out;
 
+}
+
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    z-index: 1;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0px 1px 4px 1px rgb(170, 170, 170);
+}
+
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 10px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #fbfbfb;
+}
+
+.dropdown-content .drop-two:hover {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown span {
+    position: absolute;
+    top: 3px;
+    right: -1.3rem;
+    color: rgb(3, 184, 3);
+}
+
+.dropdown span>.green-arrow-icon {
+    font-size: 18px !important;
 }

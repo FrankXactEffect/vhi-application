@@ -1,0 +1,25 @@
+.verified-container {
+    display: grid;
+    place-items: center;
+}
+
+
+.banner_title {
+    text-align: center;
+    font-size: 45px;
+    color: #3F3D56;
+}
+
+.size {
+    width: 30rem;
+
+}
+
+.Bottom_text {
+    text-align: center;
+    color: #3F3D56;
+}
+
+.color {
+    color: #00C707;
+}

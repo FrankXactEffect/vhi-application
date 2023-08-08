@@ -1,15 +1,16 @@
 import React from 'react'
 import PrivateTxt from './privateTxt/PrivateTxt'
 import PrivateInput from './privateInput/PrivateInput'
+import { motion } from 'framer-motion'
 
 
 function Private() {
     return (
-        <div>
+        <motion.div>
             <PrivateTxt />
             <PrivateInput />
 
-        </div>
+        </motion.div>
     )
 }
 
