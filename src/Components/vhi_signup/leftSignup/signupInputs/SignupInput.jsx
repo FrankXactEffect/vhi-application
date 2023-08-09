@@ -82,10 +82,10 @@ function SignupInput() {
                                 value={password}
                             />
                             {showPassword ? (
-                                <VisibilityIcon onClick={togglePasswordVisibility} />
+                                <VisibilityIcon id="visible-green" className='visible-icon' onClick={togglePasswordVisibility} />
 
                             ) : (
-                                <VisibilityOffIcon onClick={togglePasswordVisibility} />
+                                <VisibilityOffIcon className='visible-icon' onClick={togglePasswordVisibility} />
                             )}
                         </div>
                     </div>
@@ -99,9 +99,9 @@ function SignupInput() {
                                 value={confirmation}
                             />
                             {showconfirmPassword ? (
-                                <VisibilityIcon onClick={toggleConPasswordVisibility} />
+                                <VisibilityIcon id="visible-green-two" className='visible-icon-two' onClick={toggleConPasswordVisibility} />
                             ) : (
-                                <VisibilityOffIcon onClick={toggleConPasswordVisibility} />
+                                <VisibilityOffIcon className='visible-icon-two' onClick={toggleConPasswordVisibility} />
                             )}
                         </div>
                     </div>

@@ -13,6 +13,7 @@ const IMAGES = {
     imgTwelve: require('./Group 34motor.png'),
     imgThirteen: require('./Group 34fileicon.png'),
     imgFourteen: require('./undraw_questions_re_1fy7 2about us.png'),
+    imgFifteen: require('./Group 22verified.png'),
 
 }
 

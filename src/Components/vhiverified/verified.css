@@ -20,6 +20,11 @@
     color: #3F3D56;
 }
 
+.Bottom_text p {
+    color: rgb(231, 30, 30);
+    line-height: 35px;
+}
+
 .color {
     color: #00C707;
 }

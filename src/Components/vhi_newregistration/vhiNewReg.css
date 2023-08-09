@@ -67,6 +67,10 @@ select:hover {
     margin-top: 6%;
 }
 
+.new-reg-container {
+    text-decoration: none;
+}
+
 .new-reg-button-container {
     color: white;
     width: 30%;

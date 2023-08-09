@@ -14,7 +14,7 @@ function VhiOldCom() {
     return (
         <div>
 
-            <div className='banner__title'>
+            <div className='banner__title_com'>
                 <h1>Vehicle Plate Renewal</h1>
             </div>
             <form className='oldCommercial-form'>

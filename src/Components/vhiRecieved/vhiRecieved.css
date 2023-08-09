@@ -1,0 +1,25 @@
+.mid-content img {
+    width: 18rem;
+    padding-top: 2%;
+    padding-bottom: 2%;
+
+}
+
+.mid-content h1 {
+    text-align: center;
+    color: #3F3D56;
+    font-size: 50px;
+}
+
+.mid-content p {
+    font-size: 18px;
+    line-height: 30px;
+    color: #5b596b;
+    font-weight: 600;
+}
+
+.mid-content {
+    display: grid;
+    place-items: center;
+
+}

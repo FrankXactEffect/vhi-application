@@ -4,9 +4,14 @@ import UploadFileIcon from '@mui/icons-material/UploadFile';
 import Vhi_footer from '../vhi_footer/Vhi_footer'
 import HelpIcon from '@mui/icons-material/Help';
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion';
+
+
 function Vhi_registration() {
     return (
-        <div className='vhi_registration-container'>
+        <motion.div initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }} className='vhi_registration-container'>
 
             <div className='banner__title'>
                 <h1>New Car Registration</h1>
@@ -14,8 +19,10 @@ function Vhi_registration() {
             </div>
             <form>
                 {/* input filed */}
+
                 <div className='input__over_all__container'>
                     {/* first row */}
+
                     <div className='level-one' id='level-one'>
                         <label for="First Name">Vehicle Identification Number</label>
                         <input type="text" className="first__row" />
@@ -33,8 +40,10 @@ function Vhi_registration() {
 
 
                 {/* upload */}
+
                 <div className='traced-upload-container'>
                     {/* <p className='sub__caption'>Vehicle Identification</p> */}
+
                     <div className='box-container'>
 
                         <div className='traced-upload-box'>
@@ -55,6 +64,8 @@ function Vhi_registration() {
                     </div>
 
 
+
+
                     <div className='box-container-two'>
 
                         <div className='traced-upload-box'>
@@ -73,11 +84,12 @@ function Vhi_registration() {
                             <input type="file" />
                         </div>
                     </div>
+
                 </div>
 
-                <div className='vhi_button_container'>
+                <Link to={'recieved'} className='vhi_button_container'>
                     <button type="submit">REGISTER</button>
-                </div>
+                </Link>
             </form>
             <Vhi_footer />
             <Link to={""}>
@@ -92,7 +104,7 @@ function Vhi_registration() {
             {/* upload fields */}
             {/* button */}
             {/* footer */}
-        </div>
+        </motion.div>
     )
 }
 

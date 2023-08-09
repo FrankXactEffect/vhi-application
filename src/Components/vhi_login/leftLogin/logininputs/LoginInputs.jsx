@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import './loginInput.css'
 import { Link } from 'react-router-dom'
-// import VisibilityIcon from '@mui/icons-material/Visibility';
-// import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import axios from 'axios';
 import { useHistory } from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
@@ -14,6 +14,7 @@ function LoginInputs() {
     const [email, setEmail] = useState("")
 
     const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false); // Track password visibility
 
     const logged = () => {
         history.push("/VhiMainHome");
@@ -43,7 +44,9 @@ function LoginInputs() {
     }
 
 
-
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
 
     return (
         <motion.div
@@ -60,8 +63,17 @@ function LoginInputs() {
                 <div className="password-input-container">
                     <label for="password">Password</label>
                     <div className="input-icon-container" >
-                        <input type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
-                        {/* <span onClick={handleClickShowPassword} onMouseDown={handleMouseDownPassword}>{password.showPassword ? <VisibilityIcon className='visibleIcon' /> : <VisibilityOffIcon className='visibleOffIcon' />}</span> */}
+                        <input
+                            type={showPassword ? 'text' : 'password'}
+                            onChange={(e) => setPassword(e.target.value)}
+                            value={password}
+                        />
+                        {showPassword ? (
+                            <VisibilityIcon id="visible-login-green" className='visible-login-icon' onClick={togglePasswordVisibility} />
+
+                        ) : (
+                            <VisibilityOffIcon className='visible-login-icon' onClick={togglePasswordVisibility} />
+                        )}
                     </div>
                     <Link to={'VhipasswordRecovery'}><p>Forgot Password?</p></Link>
                 </div>

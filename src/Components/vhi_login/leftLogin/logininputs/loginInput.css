@@ -102,6 +102,28 @@
     cursor: pointer;
 }
 
+.input-icon-container {
+    position: relative;
+}
+
+.input-icon-container .visible-login-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px !important;
+    color: rgb(185, 185, 185);
+}
+
+#visible-login-green {
+    color: rgb(3, 184, 3);
+}
+
+.input-icon-container .visible-login-icon {
+    cursor: pointer;
+
+}
+
+
 .password-input-container a {
     text-align: right !important;
     text-decoration: none;

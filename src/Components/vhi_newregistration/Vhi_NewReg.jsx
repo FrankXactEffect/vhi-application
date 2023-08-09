@@ -132,9 +132,9 @@ function Vhi_NewReg() {
                 </div>
 
 
-                <div className='new-reg-container'>
-                    <button className='new-reg-button-container' type="submit" onClick={submitForm}>SUBMIT</button>
-                </div>
+                <Link to={'reg'} className='new-reg-container'>
+                    <button className='new-reg-button-container' type="submit" >SUBMIT</button>
+                </Link>
 
 
                 <ToastContainer />

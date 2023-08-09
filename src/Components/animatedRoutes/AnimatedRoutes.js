@@ -18,6 +18,7 @@ import BasicFaq from '../home/basicFaq/BasicFaq';
 import BasicContact from '../home/basicContact/BasicContact';
 import { AnimatePresence } from "framer-motion"
 import Verified from '../vhiverified/Verified';
+import VhiRecieved from '../vhiRecieved/VhiRecieved';
 function AnimatedRoutes() {
 
     const location = useLocation();
@@ -42,6 +43,7 @@ function AnimatedRoutes() {
                 <Route exact path='/basicFaq'><BasicFaq /></Route>
                 <Route exact path='/basicContact'><BasicContact /></Route>
                 <Route exact path='/verified'><Verified /></Route>
+                <Route exact path='/recieved'><VhiRecieved /></Route>
             </Switch>
         </AnimatePresence>
     )

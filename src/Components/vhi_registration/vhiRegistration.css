@@ -162,7 +162,9 @@
     background-color: rgb(10, 167, 10);
 }
 
-
+.vhi_button_container {
+    text-decoration: none;
+}
 
 
 /* ============================================= */

@@ -149,15 +149,16 @@
 
 
 /* =============================================== */
-.banner__title {
+.banner__title_com {
     display: flex;
     justify-content: center;
+    margin-top: 10px;
 }
 
-.banner__title h1 {
+.banner__title_com h1 {
     color: #3F3D56;
     font-size: 60px;
-    margin-top: 10px;
+
 }
 
 

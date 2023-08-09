@@ -62,8 +62,11 @@
 }
 
 
-
+/* 
 .dropdown:hover .dropdown-content {
+    display: block;
+} */
+.dropdown-content {
     display: block;
 }
 
@@ -97,4 +100,9 @@
 
 .dropdown span>.green-arrow-icon {
     font-size: 18px !important;
+}
+
+.green-highlight {
+
+    color: rgb(3, 184, 3);
 }
